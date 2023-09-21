@@ -2,42 +2,38 @@ import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart'
 import 'package:abac_challenge/pages/identify_car_page/providers/new_cart_prov.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/amount_produs_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class NewProduct extends ConsumerStatefulWidget {
+class NewProduct extends HookConsumerWidget {
   const NewProduct({super.key});
 
   @override
-  NewProductState createState() => NewProductState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final modalFormKey = useState(GlobalKey<FormState>());
 
-class NewProductState extends ConsumerState<NewProduct> {
-  final _modalFormKey = GlobalKey<FormState>();
-
-  Future<void> saveForm() async {
-    final isValid = _modalFormKey.currentState?.validate();
-    if (isValid == false || isValid == null) {
-      return;
-    }
-    _modalFormKey.currentState?.save();
-    try {
-      //add item in list method ->
-      final cartProdus = ref.read(newCartProv);
-      ref.read(cartProvider.notifier).addItem(cartProdus!);
-    } catch (e) {
-      rethrow;
-    }
-    ref.read(newCartProv.notifier).setCartProv(null);
-    Navigator.of(context).pop();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
 
     final cartProdus = ref.read(newCartProv);
 
     final ColorScheme colors = Theme.of(context).colorScheme;
+
+    Future<void> saveForm() async {
+      final isValid = modalFormKey.value.currentState?.validate();
+      if (isValid == false || isValid == null) {
+        return;
+      }
+      modalFormKey.value.currentState?.save();
+      try {
+        //add item in list method ->
+        final cartProdus = ref.read(newCartProv);
+        ref.read(cartProvider.notifier).addItem(cartProdus!);
+      } catch (e) {
+        rethrow;
+      }
+      ref.read(newCartProv.notifier).setCartProv(null);
+      Navigator.of(context).pop();
+    }
 
     return Container(
       padding: EdgeInsets.only(
@@ -46,7 +42,7 @@ class NewProductState extends ConsumerState<NewProduct> {
           right: 10,
           bottom: MediaQuery.of(context).viewInsets.bottom + 10),
       child: Form(
-        key: _modalFormKey,
+        key: modalFormKey.value,
         child: ListView(
           children: [
             // title of particular item
