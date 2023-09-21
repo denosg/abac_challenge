@@ -1,17 +1,36 @@
+import 'package:abac_challenge/main.dart';
+import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/search_widget.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/step_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class IdentifyCarPage extends StatelessWidget {
+class IdentifyCarPage extends ConsumerWidget {
   static const routeName = 'identify-car-page';
 
   const IdentifyCarPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final ColorScheme colors = Theme.of(context).colorScheme;
 
+    final cart = ref.watch(cartProvider);
+
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: TextButton(
+          onPressed: cart.isEmpty
+              ? null
+              : () {
+                  logger.i('next page');
+                },
+          child: const Text(
+            'ÎNAINTE',
+            style: TextStyle(
+                color: Colors.black54,
+                fontWeight: FontWeight.bold,
+                fontSize: 20),
+          )),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),

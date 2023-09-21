@@ -56,7 +56,7 @@ class WelcomePage extends StatelessWidget {
                       onPressed: () {
                         logger.i('User is going to Identify Car Page');
                         Navigator.of(context)
-                            .pushNamed(IdentifyCarPage.routeName);
+                            .pushReplacementNamed(IdentifyCarPage.routeName);
                       },
                       child: const Text(
                         'Să începem !',
