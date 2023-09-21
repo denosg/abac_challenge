@@ -1,5 +1,6 @@
 import 'package:abac_challenge/common/custom_material_color.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   // light theme
@@ -10,6 +11,7 @@ class AppTheme {
       secondary: Colors.black,
       tertiary: createMaterialColor(const Color.fromRGBO(167, 35, 58, 1)),
     ),
+    textTheme: GoogleFonts.montserratTextTheme(),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.android: CupertinoPageTransitionsBuilder(),
@@ -26,6 +28,7 @@ class AppTheme {
       secondary: Colors.white70,
       tertiary: createMaterialColor(const Color.fromRGBO(167, 35, 58, 1)),
     ),
+    textTheme: GoogleFonts.montserratTextTheme(),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.android: CupertinoPageTransitionsBuilder(),
