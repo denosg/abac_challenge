@@ -30,32 +30,40 @@ class CartTempWidget extends ConsumerWidget {
               Text('Total', style: textStyle),
             ],
           ),
+          const Divider(thickness: 2.5),
           SizedBox(
             height: deviceSize.height * 0.5,
             child: ListView.builder(
               itemBuilder: (context, index) {
                 final product = cartList[index].produs;
                 final quantity = cartList[index].quantity;
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                return Column(
                   children: [
-                    SizedBox(
-                        width: deviceSize.width * 0.24,
-                        child: Expanded(
-                            child: Text(product.name, style: textStyle))),
-                    SizedBox(
-                        width: deviceSize.width * 0.24,
-                        child: Text('$quantity', style: textStyle)),
-                    SizedBox(
-                        width: deviceSize.width * 0.24,
-                        child: Text('${product.price}', style: textStyle)),
-                    SizedBox(
-                      width: deviceSize.width * 0.24,
-                      child: Expanded(
-                        child: Text('${getTotalPrice(product.price, quantity)}',
-                            style: textStyle),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                            width: deviceSize.width * 0.24,
+                            child: Expanded(
+                                child: Text(product.name, style: textStyle))),
+                        SizedBox(
+                            width: deviceSize.width * 0.24,
+                            child: Text('$quantity', style: textStyle)),
+                        SizedBox(
+                            width: deviceSize.width * 0.24,
+                            child: Text('${product.price}', style: textStyle)),
+                        SizedBox(
+                          width: deviceSize.width * 0.24,
+                          child: Expanded(
+                            child: Text(
+                                '${getTotalPrice(product.price, quantity)}',
+                                style: textStyle),
+                          ),
+                        ),
+                      ],
                     ),
+                    const Divider(),
+                    const SizedBox(height: 5),
                   ],
                 );
               },

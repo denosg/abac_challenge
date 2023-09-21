@@ -1,8 +1,10 @@
 import 'package:abac_challenge/models/cart_produs/cart_produs.dart';
 import 'package:abac_challenge/models/dummy_list.dart';
-import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart';
+import 'package:abac_challenge/models/produs/produs.dart';
+import 'package:abac_challenge/pages/identify_car_page/providers/new_cart_prov.dart';
 import 'package:abac_challenge/pages/identify_car_page/providers/search_prov.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/cart_template_widget.dart';
+import 'package:abac_challenge/pages/identify_car_page/widgets/new_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,6 +15,10 @@ class SearchWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final searchQuery = ref.watch(searchQueryProvider);
 
+    final ColorScheme colors = Theme.of(context).colorScheme;
+
+    final deviceSize = MediaQuery.of(context).size;
+
     final filteredProducts = productList.where((produs) {
       if (searchQuery != null) {
         final query = searchQuery.toLowerCase();
@@ -21,9 +27,20 @@ class SearchWidget extends ConsumerWidget {
       return false;
     }).toList();
 
-    final ColorScheme colors = Theme.of(context).colorScheme;
+    // modal bottoom sheet when entering new item in the list
+    void startAddNewProduct(
+        BuildContext context, WidgetRef ref, Produs produs) {
+      final tempCart = CartProdus(produs: produs);
+      ref.read(newCartProv.notifier).setCartProv(tempCart);
 
-    final deviceSize = MediaQuery.of(context).size;
+      showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        context: context,
+        builder: (context) => const NewProduct(),
+      );
+    }
 
     return Stack(children: [
       Column(
@@ -81,9 +98,7 @@ class SearchWidget extends ConsumerWidget {
                                 ref
                                     .read(searchQueryProvider.notifier)
                                     .updateQuery('');
-                                ref
-                                    .read(cartProvider.notifier)
-                                    .addItem(CartProdus(produs: product));
+                                startAddNewProduct(context, ref, product);
                                 FocusScope.of(context).unfocus();
                               },
                             ),
