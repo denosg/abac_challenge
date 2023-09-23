@@ -1,3 +1,4 @@
+import 'package:abac_challenge/pages/choose_date_page/choose_date_page.dart';
 import 'package:abac_challenge/pages/identify_car_page/identify_car_page.dart';
 import 'package:abac_challenge/pages/welcome_page/welcome_page.dart';
 import 'package:abac_challenge/theme/theme.dart';
@@ -26,11 +27,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const WelcomePage(),
       routes: {
         WelcomePage.routeName: (context) => const WelcomePage(),
         IdentifyCarPage.routeName: (context) => const IdentifyCarPage(),
+        ChooseDatePage.routeName: (context) => const ChooseDatePage(),
       },
     );
   }
