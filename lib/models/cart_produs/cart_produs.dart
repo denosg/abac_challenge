@@ -7,6 +7,7 @@ part 'cart_produs.g.dart';
 @Freezed()
 class CartProdus with _$CartProdus {
   const factory CartProdus({
+    required String id,
     required Produs produs,
     @Default(1) int quantity,
   }) = _CartProdus;

@@ -8,8 +8,11 @@ class AmountProdusForm extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final amount = useState(1);
-    final textEditController = useTextEditingController(text: '1');
+    final prodAmount = ref.read(newCartProv)!.quantity;
+    final amount = useState(prodAmount);
+
+    final textEditController =
+        useTextEditingController(text: prodAmount.toString());
 
     void increment() {
       amount.value++;
@@ -17,7 +20,7 @@ class AmountProdusForm extends HookConsumerWidget {
     }
 
     void decrement() {
-      if (amount.value > 0) {
+      if (amount.value > 1) {
         amount.value--;
         textEditController.text = amount.value.toString();
       }

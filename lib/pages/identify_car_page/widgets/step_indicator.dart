@@ -42,9 +42,11 @@ class StepIndicator extends StatelessWidget {
                         height: 45,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: step == currentStep
-                              ? colors.tertiary
-                              : Colors.grey,
+                          color: currentStep > step
+                              ? Colors.green
+                              : currentStep == step
+                                  ? colors.tertiary
+                                  : Colors.grey,
                         ),
                         child: Center(
                           child: Text(

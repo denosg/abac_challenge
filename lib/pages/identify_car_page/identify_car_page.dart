@@ -1,4 +1,5 @@
 import 'package:abac_challenge/main.dart';
+import 'package:abac_challenge/pages/choose_date_page/choose_date_page.dart';
 import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/search_widget.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/step_indicator.dart';
@@ -17,12 +18,14 @@ class IdentifyCarPage extends ConsumerWidget {
     final cart = ref.watch(cartProvider);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: TextButton(
           onPressed: cart.isEmpty
               ? null
               : () {
-                  logger.i('next page');
+                  logger.i('User went to choosing date page');
+                  Navigator.of(context).pushNamed(ChooseDatePage.routeName);
                 },
           child: const Text(
             'ÎNAINTE',

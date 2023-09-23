@@ -20,6 +20,7 @@ CartProdus _$CartProdusFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CartProdus {
+  String get id => throw _privateConstructorUsedError;
   Produs get produs => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
 
@@ -35,7 +36,7 @@ abstract class $CartProdusCopyWith<$Res> {
           CartProdus value, $Res Function(CartProdus) then) =
       _$CartProdusCopyWithImpl<$Res, CartProdus>;
   @useResult
-  $Res call({Produs produs, int quantity});
+  $Res call({String id, Produs produs, int quantity});
 
   $ProdusCopyWith<$Res> get produs;
 }
@@ -53,10 +54,15 @@ class _$CartProdusCopyWithImpl<$Res, $Val extends CartProdus>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? produs = null,
     Object? quantity = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       produs: null == produs
           ? _value.produs
           : produs // ignore: cast_nullable_to_non_nullable
@@ -85,7 +91,7 @@ abstract class _$$_CartProdusCopyWith<$Res>
       __$$_CartProdusCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Produs produs, int quantity});
+  $Res call({String id, Produs produs, int quantity});
 
   @override
   $ProdusCopyWith<$Res> get produs;
@@ -102,10 +108,15 @@ class __$$_CartProdusCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? produs = null,
     Object? quantity = null,
   }) {
     return _then(_$_CartProdus(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       produs: null == produs
           ? _value.produs
           : produs // ignore: cast_nullable_to_non_nullable
@@ -121,11 +132,14 @@ class __$$_CartProdusCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CartProdus implements _CartProdus {
-  const _$_CartProdus({required this.produs, this.quantity = 1});
+  const _$_CartProdus(
+      {required this.id, required this.produs, this.quantity = 1});
 
   factory _$_CartProdus.fromJson(Map<String, dynamic> json) =>
       _$$_CartProdusFromJson(json);
 
+  @override
+  final String id;
   @override
   final Produs produs;
   @override
@@ -134,7 +148,7 @@ class _$_CartProdus implements _CartProdus {
 
   @override
   String toString() {
-    return 'CartProdus(produs: $produs, quantity: $quantity)';
+    return 'CartProdus(id: $id, produs: $produs, quantity: $quantity)';
   }
 
   @override
@@ -142,6 +156,7 @@ class _$_CartProdus implements _CartProdus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CartProdus &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.produs, produs) || other.produs == produs) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity));
@@ -149,7 +164,7 @@ class _$_CartProdus implements _CartProdus {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, produs, quantity);
+  int get hashCode => Object.hash(runtimeType, id, produs, quantity);
 
   @JsonKey(ignore: true)
   @override
@@ -167,11 +182,15 @@ class _$_CartProdus implements _CartProdus {
 
 abstract class _CartProdus implements CartProdus {
   const factory _CartProdus(
-      {required final Produs produs, final int quantity}) = _$_CartProdus;
+      {required final String id,
+      required final Produs produs,
+      final int quantity}) = _$_CartProdus;
 
   factory _CartProdus.fromJson(Map<String, dynamic> json) =
       _$_CartProdus.fromJson;
 
+  @override
+  String get id;
   @override
   Produs get produs;
   @override
