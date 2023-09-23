@@ -25,9 +25,17 @@ class NewProduct extends HookConsumerWidget {
       }
       modalFormKey.value.currentState?.save();
       try {
-        //add item in list method ->
         final cartProdus = ref.read(newCartProv);
-        ref.read(cartProvider.notifier).addItem(cartProdus!);
+
+        final isItemInCartList =
+            ref.read(cartProvider.notifier).isItemInList(cartProdus!.id);
+
+        if (isItemInCartList) {
+          ref.read(cartProvider.notifier).changeQuantity(
+              itemId: cartProdus.id, quantity: cartProdus.quantity);
+        } else {
+          ref.read(cartProvider.notifier).addItem(cartProdus);
+        }
       } catch (e) {
         rethrow;
       }

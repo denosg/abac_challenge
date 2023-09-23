@@ -1,4 +1,5 @@
 import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart';
+import 'package:abac_challenge/pages/identify_car_page/widgets/product_in_cart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,65 +14,31 @@ class CartTempWidget extends ConsumerWidget {
 
     final deviceSize = MediaQuery.of(context).size;
 
-    double getTotalPrice(double productPrice, int quantity) {
-      return productPrice * quantity;
-    }
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
-        children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Produs', style: textStyle),
-              Text('Cantitate', style: textStyle),
-              Text('Preț Unitar', style: textStyle),
-              Text('Total', style: textStyle),
-            ],
+    return Column(
+      children: [
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Produs', style: textStyle),
+            Text('Cantitate', style: textStyle),
+            Text('Preț Unitar', style: textStyle),
+            Text('Total', style: textStyle),
+          ],
+        ),
+        const Divider(thickness: 2.5),
+        SizedBox(
+          height: deviceSize.height * 0.5,
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              final product = cartList[index].produs;
+              final cartProduct = cartList[index];
+              return ProductInCartWidget(
+                  cartProdus: cartProduct, produs: product);
+            },
+            itemCount: cartList.length,
           ),
-          const Divider(thickness: 2.5),
-          SizedBox(
-            height: deviceSize.height * 0.5,
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                final product = cartList[index].produs;
-                final quantity = cartList[index].quantity;
-                return Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                            width: deviceSize.width * 0.24,
-                            child: Expanded(
-                                child: Text(product.name, style: textStyle))),
-                        SizedBox(
-                            width: deviceSize.width * 0.24,
-                            child: Text('$quantity', style: textStyle)),
-                        SizedBox(
-                            width: deviceSize.width * 0.24,
-                            child: Text('${product.price}', style: textStyle)),
-                        SizedBox(
-                          width: deviceSize.width * 0.24,
-                          child: Expanded(
-                            child: Text(
-                                '${getTotalPrice(product.price, quantity)}',
-                                style: textStyle),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const Divider(),
-                    const SizedBox(height: 5),
-                  ],
-                );
-              },
-              itemCount: cartList.length,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
