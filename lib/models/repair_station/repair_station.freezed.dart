@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-RepairStaition _$RepairStaitionFromJson(Map<String, dynamic> json) {
-  return _RepairStaition.fromJson(json);
+RepairStation _$RepairStationFromJson(Map<String, dynamic> json) {
+  return _RepairStation.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RepairStaition {
+mixin _$RepairStation {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   int get rating => throw _privateConstructorUsedError;
@@ -29,15 +29,15 @@ mixin _$RepairStaition {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RepairStaitionCopyWith<RepairStaition> get copyWith =>
+  $RepairStationCopyWith<RepairStation> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RepairStaitionCopyWith<$Res> {
-  factory $RepairStaitionCopyWith(
-          RepairStaition value, $Res Function(RepairStaition) then) =
-      _$RepairStaitionCopyWithImpl<$Res, RepairStaition>;
+abstract class $RepairStationCopyWith<$Res> {
+  factory $RepairStationCopyWith(
+          RepairStation value, $Res Function(RepairStation) then) =
+      _$RepairStationCopyWithImpl<$Res, RepairStation>;
   @useResult
   $Res call(
       {String id,
@@ -49,9 +49,9 @@ abstract class $RepairStaitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RepairStaitionCopyWithImpl<$Res, $Val extends RepairStaition>
-    implements $RepairStaitionCopyWith<$Res> {
-  _$RepairStaitionCopyWithImpl(this._value, this._then);
+class _$RepairStationCopyWithImpl<$Res, $Val extends RepairStation>
+    implements $RepairStationCopyWith<$Res> {
+  _$RepairStationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -98,11 +98,11 @@ class _$RepairStaitionCopyWithImpl<$Res, $Val extends RepairStaition>
 }
 
 /// @nodoc
-abstract class _$$_RepairStaitionCopyWith<$Res>
-    implements $RepairStaitionCopyWith<$Res> {
-  factory _$$_RepairStaitionCopyWith(
-          _$_RepairStaition value, $Res Function(_$_RepairStaition) then) =
-      __$$_RepairStaitionCopyWithImpl<$Res>;
+abstract class _$$_RepairStationCopyWith<$Res>
+    implements $RepairStationCopyWith<$Res> {
+  factory _$$_RepairStationCopyWith(
+          _$_RepairStation value, $Res Function(_$_RepairStation) then) =
+      __$$_RepairStationCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$_RepairStaitionCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RepairStaitionCopyWithImpl<$Res>
-    extends _$RepairStaitionCopyWithImpl<$Res, _$_RepairStaition>
-    implements _$$_RepairStaitionCopyWith<$Res> {
-  __$$_RepairStaitionCopyWithImpl(
-      _$_RepairStaition _value, $Res Function(_$_RepairStaition) _then)
+class __$$_RepairStationCopyWithImpl<$Res>
+    extends _$RepairStationCopyWithImpl<$Res, _$_RepairStation>
+    implements _$$_RepairStationCopyWith<$Res> {
+  __$$_RepairStationCopyWithImpl(
+      _$_RepairStation _value, $Res Function(_$_RepairStation) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,7 +132,7 @@ class __$$_RepairStaitionCopyWithImpl<$Res>
     Object? time = null,
     Object? picture = null,
   }) {
-    return _then(_$_RepairStaition(
+    return _then(_$_RepairStation(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -163,8 +163,8 @@ class __$$_RepairStaitionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RepairStaition implements _RepairStaition {
-  const _$_RepairStaition(
+class _$_RepairStation implements _RepairStation {
+  const _$_RepairStation(
       {required this.id,
       required this.title,
       required this.rating,
@@ -172,8 +172,8 @@ class _$_RepairStaition implements _RepairStaition {
       required this.time,
       required this.picture});
 
-  factory _$_RepairStaition.fromJson(Map<String, dynamic> json) =>
-      _$$_RepairStaitionFromJson(json);
+  factory _$_RepairStation.fromJson(Map<String, dynamic> json) =>
+      _$$_RepairStationFromJson(json);
 
   @override
   final String id;
@@ -190,14 +190,14 @@ class _$_RepairStaition implements _RepairStaition {
 
   @override
   String toString() {
-    return 'RepairStaition(id: $id, title: $title, rating: $rating, price: $price, time: $time, picture: $picture)';
+    return 'RepairStation(id: $id, title: $title, rating: $rating, price: $price, time: $time, picture: $picture)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RepairStaition &&
+            other is _$_RepairStation &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.rating, rating) || other.rating == rating) &&
@@ -214,28 +214,28 @@ class _$_RepairStaition implements _RepairStaition {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RepairStaitionCopyWith<_$_RepairStaition> get copyWith =>
-      __$$_RepairStaitionCopyWithImpl<_$_RepairStaition>(this, _$identity);
+  _$$_RepairStationCopyWith<_$_RepairStation> get copyWith =>
+      __$$_RepairStationCopyWithImpl<_$_RepairStation>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RepairStaitionToJson(
+    return _$$_RepairStationToJson(
       this,
     );
   }
 }
 
-abstract class _RepairStaition implements RepairStaition {
-  const factory _RepairStaition(
+abstract class _RepairStation implements RepairStation {
+  const factory _RepairStation(
       {required final String id,
       required final String title,
       required final int rating,
       required final double price,
       required final int time,
-      required final String picture}) = _$_RepairStaition;
+      required final String picture}) = _$_RepairStation;
 
-  factory _RepairStaition.fromJson(Map<String, dynamic> json) =
-      _$_RepairStaition.fromJson;
+  factory _RepairStation.fromJson(Map<String, dynamic> json) =
+      _$_RepairStation.fromJson;
 
   @override
   String get id;
@@ -251,6 +251,6 @@ abstract class _RepairStaition implements RepairStaition {
   String get picture;
   @override
   @JsonKey(ignore: true)
-  _$$_RepairStaitionCopyWith<_$_RepairStaition> get copyWith =>
+  _$$_RepairStationCopyWith<_$_RepairStation> get copyWith =>
       throw _privateConstructorUsedError;
 }

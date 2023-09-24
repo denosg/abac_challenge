@@ -23,7 +23,7 @@ mixin _$FinalCart {
   String get id => throw _privateConstructorUsedError;
   List<CartProdus> get cartList => throw _privateConstructorUsedError;
   DateTime? get dateTime => throw _privateConstructorUsedError;
-  RepairStaition? get repairStaition => throw _privateConstructorUsedError;
+  RepairStation? get repairStaition => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,9 +40,9 @@ abstract class $FinalCartCopyWith<$Res> {
       {String id,
       List<CartProdus> cartList,
       DateTime? dateTime,
-      RepairStaition? repairStaition});
+      RepairStation? repairStaition});
 
-  $RepairStaitionCopyWith<$Res>? get repairStaition;
+  $RepairStationCopyWith<$Res>? get repairStaition;
 }
 
 /// @nodoc
@@ -79,18 +79,18 @@ class _$FinalCartCopyWithImpl<$Res, $Val extends FinalCart>
       repairStaition: freezed == repairStaition
           ? _value.repairStaition
           : repairStaition // ignore: cast_nullable_to_non_nullable
-              as RepairStaition?,
+              as RepairStation?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RepairStaitionCopyWith<$Res>? get repairStaition {
+  $RepairStationCopyWith<$Res>? get repairStaition {
     if (_value.repairStaition == null) {
       return null;
     }
 
-    return $RepairStaitionCopyWith<$Res>(_value.repairStaition!, (value) {
+    return $RepairStationCopyWith<$Res>(_value.repairStaition!, (value) {
       return _then(_value.copyWith(repairStaition: value) as $Val);
     });
   }
@@ -107,10 +107,10 @@ abstract class _$$_FinalCartCopyWith<$Res> implements $FinalCartCopyWith<$Res> {
       {String id,
       List<CartProdus> cartList,
       DateTime? dateTime,
-      RepairStaition? repairStaition});
+      RepairStation? repairStaition});
 
   @override
-  $RepairStaitionCopyWith<$Res>? get repairStaition;
+  $RepairStationCopyWith<$Res>? get repairStaition;
 }
 
 /// @nodoc
@@ -145,7 +145,7 @@ class __$$_FinalCartCopyWithImpl<$Res>
       repairStaition: freezed == repairStaition
           ? _value.repairStaition
           : repairStaition // ignore: cast_nullable_to_non_nullable
-              as RepairStaition?,
+              as RepairStation?,
     ));
   }
 }
@@ -178,7 +178,7 @@ class _$_FinalCart implements _FinalCart {
   final DateTime? dateTime;
   @override
   @JsonKey()
-  final RepairStaition? repairStaition;
+  final RepairStation? repairStaition;
 
   @override
   String toString() {
@@ -222,7 +222,7 @@ abstract class _FinalCart implements FinalCart {
       {required final String id,
       required final List<CartProdus> cartList,
       final DateTime? dateTime,
-      final RepairStaition? repairStaition}) = _$_FinalCart;
+      final RepairStation? repairStaition}) = _$_FinalCart;
 
   factory _FinalCart.fromJson(Map<String, dynamic> json) =
       _$_FinalCart.fromJson;
@@ -234,7 +234,7 @@ abstract class _FinalCart implements FinalCart {
   @override
   DateTime? get dateTime;
   @override
-  RepairStaition? get repairStaition;
+  RepairStation? get repairStaition;
   @override
   @JsonKey(ignore: true)
   _$$_FinalCartCopyWith<_$_FinalCart> get copyWith =>

@@ -4,16 +4,16 @@ part 'repair_station.freezed.dart';
 part 'repair_station.g.dart';
 
 @Freezed()
-class RepairStaition with _$RepairStaition {
-  const factory RepairStaition({
+class RepairStation with _$RepairStation {
+  const factory RepairStation({
     required String id,
     required String title,
     required int rating,
     required double price,
     required int time,
     required String picture,
-  }) = _RepairStaition;
+  }) = _RepairStation;
 
-  factory RepairStaition.fromJson(Map<String, dynamic> json) =>
-      _$RepairStaitionFromJson(json);
+  factory RepairStation.fromJson(Map<String, dynamic> json) =>
+      _$RepairStationFromJson(json);
 }
