@@ -1,6 +1,8 @@
 import 'package:abac_challenge/main.dart';
+import 'package:abac_challenge/pages/choose_date_page/providers/date_picker_prov.dart';
 import 'package:abac_challenge/pages/choose_date_page/providers/final_cart_prov.dart';
 import 'package:abac_challenge/pages/identify_car_page/identify_car_page.dart';
+import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,8 +11,8 @@ class ActionButtonsRow extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final hasFinalCartDate =
-        ref.read(finalCartProv).dateTime == null ? false : true;
+    final selectedHour = ref.watch(datePickerProv);
+    final hasHourSelected = selectedHour.hour != 0;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,8 +34,13 @@ class ActionButtonsRow extends ConsumerWidget {
               )),
         ),
         TextButton(
-            onPressed: hasFinalCartDate
+            onPressed: hasHourSelected
                 ? () {
+                    final cartList = ref.read(cartProvider);
+                    final dateTime = ref.read(datePickerProv);
+                    ref
+                        .read(finalCartProv.notifier)
+                        .setFinalCart(cartList, dateTime);
                     logger.i('User went to choosing repair station page');
                   }
                 : null,

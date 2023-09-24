@@ -1,4 +1,5 @@
 import 'package:abac_challenge/pages/choose_date_page/widgets/action_buttons_row.dart';
+import 'package:abac_challenge/pages/choose_date_page/widgets/date_time_picker.dart';
 import 'package:abac_challenge/pages/identify_car_page/widgets/step_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -32,6 +33,7 @@ class ChooseDatePage extends ConsumerWidget {
               ),
               const SizedBox(height: 30),
               const StepIndicator(currentStep: 2),
+              const DateTimePicker(),
             ],
           ),
         ),
