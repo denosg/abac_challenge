@@ -9,12 +9,9 @@ class HourGridWidget extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final deviceSize = MediaQuery.of(context).size;
-
     final selectedHour = ref.watch(datePickerProv);
 
-    return SizedBox(
-      height: deviceSize.height * 0.5,
+    return Expanded(
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,

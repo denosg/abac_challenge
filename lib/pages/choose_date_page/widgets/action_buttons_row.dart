@@ -18,22 +18,19 @@ class ActionButtonsRow extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 30),
-          child: TextButton(
-              onPressed: () {
-                logger.i('User went to identify car page');
-                Navigator.of(context)
-                    .pushReplacementNamed(IdentifyCarPage.routeName);
-              },
-              child: const Text(
-                'ÎNAPOI',
-                style: TextStyle(
-                    color: Colors.black54,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20),
-              )),
-        ),
+        TextButton(
+            onPressed: () {
+              logger.i('User went to identify car page');
+              Navigator.of(context)
+                  .pushReplacementNamed(IdentifyCarPage.routeName);
+            },
+            child: const Text(
+              'ÎNAPOI',
+              style: TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            )),
         TextButton(
             onPressed: hasHourSelected
                 ? () {
