@@ -1,3 +1,4 @@
+import 'package:abac_challenge/main.dart';
 import 'package:abac_challenge/models/cart_produs/cart_produs.dart';
 import 'package:abac_challenge/models/final_cart/final_cart.dart';
 import 'package:abac_challenge/models/repair_station/repair_station.dart';
@@ -9,6 +10,7 @@ class FinalCartNotif extends StateNotifier<FinalCart> {
 
   void setFinalCart(List<CartProdus> cartList, DateTime dateTime) {
     state = state.copyWith(cartList: cartList, dateTime: dateTime);
+    logger.i('final cart set: $state');
   }
 
   void setRepairStation(RepairStaition repairStaition) {
