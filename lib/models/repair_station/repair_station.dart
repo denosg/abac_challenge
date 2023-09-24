@@ -10,7 +10,7 @@ class RepairStaition with _$RepairStaition {
     required String title,
     required int rating,
     required double price,
-    required String time,
+    required int time,
     required String picture,
   }) = _RepairStaition;
 
