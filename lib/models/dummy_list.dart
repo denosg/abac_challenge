@@ -11,28 +11,28 @@ const productList = [
 ];
 
 const repairStationList = [
-  RepairStaition(
+  RepairStation(
       id: '1',
       title: 'Lorem Ipsum',
       rating: 3,
       price: 800,
       time: 2,
       picture: 'img/black.png'),
-  RepairStaition(
+  RepairStation(
       id: '2',
       title: 'Costelas Ind',
       rating: 5,
       price: 1000,
       time: 4,
       picture: 'img/green.jpg'),
-  RepairStaition(
+  RepairStation(
       id: '3',
       title: 'La Nasu',
       rating: 4,
       price: 1200,
       time: 3,
       picture: 'img/red.png'),
-  RepairStaition(
+  RepairStation(
       id: '3',
       title: 'Text aici',
       rating: 3,

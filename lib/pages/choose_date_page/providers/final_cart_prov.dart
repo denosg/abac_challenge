@@ -13,8 +13,9 @@ class FinalCartNotif extends StateNotifier<FinalCart> {
     logger.i('final cart set: $state');
   }
 
-  void setRepairStation(RepairStaition repairStaition) {
+  void setRepairStation(RepairStation repairStaition) {
     state = state.copyWith(repairStaition: repairStaition);
+    logger.i('repair station set: ${state.repairStaition}');
   }
 }
 

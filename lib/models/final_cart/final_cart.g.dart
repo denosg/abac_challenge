@@ -16,7 +16,7 @@ _$_FinalCart _$$_FinalCartFromJson(Map<String, dynamic> json) => _$_FinalCart(
           : DateTime.parse(json['dateTime'] as String),
       repairStaition: json['repairStaition'] == null
           ? null
-          : RepairStaition.fromJson(
+          : RepairStation.fromJson(
               json['repairStaition'] as Map<String, dynamic>),
     );
 

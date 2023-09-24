@@ -6,8 +6,8 @@ part of 'repair_station.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RepairStaition _$$_RepairStaitionFromJson(Map<String, dynamic> json) =>
-    _$_RepairStaition(
+_$_RepairStation _$$_RepairStationFromJson(Map<String, dynamic> json) =>
+    _$_RepairStation(
       id: json['id'] as String,
       title: json['title'] as String,
       rating: json['rating'] as int,
@@ -16,7 +16,7 @@ _$_RepairStaition _$$_RepairStaitionFromJson(Map<String, dynamic> json) =>
       picture: json['picture'] as String,
     );
 
-Map<String, dynamic> _$$_RepairStaitionToJson(_$_RepairStaition instance) =>
+Map<String, dynamic> _$$_RepairStationToJson(_$_RepairStation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

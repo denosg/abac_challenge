@@ -11,7 +11,7 @@ class FinalCart with _$FinalCart {
     required String id,
     required List<CartProdus> cartList,
     @Default(null) DateTime? dateTime,
-    @Default(null) RepairStaition? repairStaition,
+    @Default(null) RepairStation? repairStaition,
   }) = _FinalCart;
 
   factory FinalCart.fromJson(Map<String, dynamic> json) =>

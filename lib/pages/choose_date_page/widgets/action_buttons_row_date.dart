@@ -7,8 +7,8 @@ import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ActionButtonsRow extends ConsumerWidget {
-  const ActionButtonsRow({super.key});
+class ActionButtonsRowDate extends ConsumerWidget {
+  const ActionButtonsRowDate({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
