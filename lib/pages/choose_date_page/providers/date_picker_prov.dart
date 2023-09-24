@@ -21,7 +21,7 @@ class DatePickerNotif extends StateNotifier<DateTime> {
     );
     state = updatedDate;
 
-    logger.i('hour set: ${state.hour} \n Current set date: $state');
+    logger.i('hour set: ${state.hour} \nCurrent set date: $state');
   }
 
   int getHour() {

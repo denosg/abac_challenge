@@ -24,7 +24,7 @@ mixin _$RepairStaition {
   String get title => throw _privateConstructorUsedError;
   int get rating => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  String get time => throw _privateConstructorUsedError;
+  int get time => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $RepairStaitionCopyWith<$Res> {
       String title,
       int rating,
       double price,
-      String time,
+      int time,
       String picture});
 }
 
@@ -88,7 +88,7 @@ class _$RepairStaitionCopyWithImpl<$Res, $Val extends RepairStaition>
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       picture: null == picture
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
@@ -110,7 +110,7 @@ abstract class _$$_RepairStaitionCopyWith<$Res>
       String title,
       int rating,
       double price,
-      String time,
+      int time,
       String picture});
 }
 
@@ -152,7 +152,7 @@ class __$$_RepairStaitionCopyWithImpl<$Res>
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       picture: null == picture
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
@@ -184,7 +184,7 @@ class _$_RepairStaition implements _RepairStaition {
   @override
   final double price;
   @override
-  final String time;
+  final int time;
   @override
   final String picture;
 
@@ -231,7 +231,7 @@ abstract class _RepairStaition implements RepairStaition {
       required final String title,
       required final int rating,
       required final double price,
-      required final String time,
+      required final int time,
       required final String picture}) = _$_RepairStaition;
 
   factory _RepairStaition.fromJson(Map<String, dynamic> json) =
@@ -246,7 +246,7 @@ abstract class _RepairStaition implements RepairStaition {
   @override
   double get price;
   @override
-  String get time;
+  int get time;
   @override
   String get picture;
   @override

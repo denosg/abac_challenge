@@ -1,6 +1,7 @@
 import 'package:abac_challenge/main.dart';
 import 'package:abac_challenge/pages/choose_date_page/providers/date_picker_prov.dart';
 import 'package:abac_challenge/pages/choose_date_page/providers/final_cart_prov.dart';
+import 'package:abac_challenge/pages/choose_repair_station_page/choose_repair_station_page.dart';
 import 'package:abac_challenge/pages/identify_car_page/identify_car_page.dart';
 import 'package:abac_challenge/pages/identify_car_page/providers/cart_prov.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class ActionButtonsRow extends ConsumerWidget {
           padding: const EdgeInsets.only(left: 30),
           child: TextButton(
               onPressed: () {
-                logger.i('User went to choosing repair station page');
+                logger.i('User went to identify car page');
                 Navigator.of(context)
                     .pushReplacementNamed(IdentifyCarPage.routeName);
               },
@@ -42,6 +43,8 @@ class ActionButtonsRow extends ConsumerWidget {
                         .read(finalCartProv.notifier)
                         .setFinalCart(cartList, dateTime);
                     logger.i('User went to choosing repair station page');
+                    Navigator.of(context)
+                        .pushNamed(ChooseRepairStationPage.routeName);
                   }
                 : null,
             child: const Text(

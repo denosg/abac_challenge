@@ -12,7 +12,7 @@ _$_RepairStaition _$$_RepairStaitionFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
       rating: json['rating'] as int,
       price: (json['price'] as num).toDouble(),
-      time: json['time'] as String,
+      time: json['time'] as int,
       picture: json['picture'] as String,
     );
 
