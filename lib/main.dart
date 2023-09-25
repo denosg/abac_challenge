@@ -1,5 +1,6 @@
 import 'package:abac_challenge/pages/choose_date_page/choose_date_page.dart';
 import 'package:abac_challenge/pages/choose_repair_station_page/choose_repair_station_page.dart';
+import 'package:abac_challenge/pages/finish_page/finish_page.dart';
 import 'package:abac_challenge/pages/identify_car_page/identify_car_page.dart';
 import 'package:abac_challenge/pages/welcome_page/welcome_page.dart';
 import 'package:abac_challenge/theme/theme.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         ChooseDatePage.routeName: (context) => const ChooseDatePage(),
         ChooseRepairStationPage.routeName: (context) =>
             const ChooseRepairStationPage(),
+        FinishPage.routeName: (context) => const FinishPage(),
       },
     );
   }

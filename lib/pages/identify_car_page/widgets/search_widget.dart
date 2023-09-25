@@ -75,7 +75,7 @@ class SearchWidget extends ConsumerWidget {
                             child: ListTile(
                               title: Text(product.name),
                               subtitle:
-                                  Text('Price: ${product.price.toString()}'),
+                                  Text('Preț: ${product.price.toString()}'),
                               onTap: () {
                                 ref
                                     .read(searchQueryProvider.notifier)

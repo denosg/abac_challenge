@@ -1,4 +1,5 @@
-import 'package:abac_challenge/pages/identify_car_page/providers/search_prov.dart';
+import 'package:abac_challenge/models/dummy_list.dart';
+import 'package:abac_challenge/pages/choose_repair_station_page/providers/repair_station_search_prov.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -30,7 +31,16 @@ class SearchRepairStation extends HookConsumerWidget {
             border: InputBorder.none,
           ),
           onChanged: (query) {
-            ref.read(searchQueryProvider.notifier).updateQuery(query);
+            final searchList = repairStationList.where((repairStation) {
+              if (query != '') {
+                final searchQuery = query.toLowerCase();
+                return repairStation.title.toLowerCase().contains(searchQuery);
+              }
+              return true;
+            }).toList();
+            ref
+                .read(repairStationSearchPod.notifier)
+                .setRepairStationList(searchList);
           },
         ),
       ),

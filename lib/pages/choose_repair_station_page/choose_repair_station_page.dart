@@ -44,7 +44,7 @@ class ChooseRepairStationPage extends ConsumerWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             const SearchRepairStation(),
-            const RepairStationListView(),
+            const Expanded(child: RepairStationListView()),
             const ActionButtonsRowRepair()
           ],
         ),

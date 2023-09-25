@@ -43,6 +43,11 @@ class CartNotifier extends StateNotifier<List<CartProdus>> {
     return state.contains(getItemById(itemId));
   }
 
+  bool isNameOfItemInList(String itemName) {
+    // Use any() method to check if any item in the list has the specified itemName
+    return state.any((item) => item.produs.name == itemName);
+  }
+
   CartProdus? getItemById(String itemId) {
     for (var item in state) {
       if (item.id == itemId) {
