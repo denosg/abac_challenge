@@ -1,6 +1,7 @@
 import 'package:abac_challenge/main.dart';
 import 'package:abac_challenge/pages/choose_date_page/choose_date_page.dart';
 import 'package:abac_challenge/pages/choose_date_page/providers/final_cart_prov.dart';
+import 'package:abac_challenge/pages/finish_page/finish_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -32,6 +33,8 @@ class ActionButtonsRowRepair extends ConsumerWidget {
             onPressed: hasRepairStation
                 ? () {
                     logger.i('User finished choosing repair station.');
+                    Navigator.of(context)
+                        .pushReplacementNamed(FinishPage.routeName);
                   }
                 : null,
             child: const Text(
