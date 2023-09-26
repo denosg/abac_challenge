@@ -27,7 +27,7 @@
 
 ## Photos of app:
 
-<img src="https://github.com/denosg/abac_challenge/assets/81863134/5da95325-b543-411a-b76a-d21b871e0ef2.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/8050ec2f-bc10-4401-a0bc-3140004935d8.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/954831fb-e4d4-4f2f-86d0-6444775e7d94.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/a2034373-7e3f-4bf3-b969-c8187f70025f.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/1c085a97-6f8f-48d9-814e-5e2dbd906ef8.png" width="197">
+<img src="https://github.com/denosg/abac_challenge/assets/81863134/274e00ed-92ef-40f5-835d-5cbebab32745.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/d32ebb93-80c3-408a-8d28-7039ff579658.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/fa61c2e4-bba7-47e9-a6d9-d3b22214d902.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/3b5c4644-b372-41c6-b715-be816e9520e4.png" width="197"> <img src="https://github.com/denosg/abac_challenge/assets/81863134/07e9a2ca-ad5b-4acd-b040-2d1c7b3715fa.png" width="197">
 
 ## Video of app:
 
