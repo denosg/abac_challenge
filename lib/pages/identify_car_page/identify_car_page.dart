@@ -25,7 +25,8 @@ class IdentifyCarPage extends ConsumerWidget {
               ? null
               : () {
                   logger.i('User went to choosing date page');
-                  Navigator.of(context).pushNamed(ChooseDatePage.routeName);
+                  Navigator.of(context)
+                      .pushReplacementNamed(ChooseDatePage.routeName);
                 },
           child: const Text(
             'ÎNAINTE',

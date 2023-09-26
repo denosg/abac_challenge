@@ -40,8 +40,8 @@ class ActionButtonsRowDate extends ConsumerWidget {
                         .read(finalCartProv.notifier)
                         .setFinalCart(cartList, dateTime);
                     logger.i('User went to choosing repair station page');
-                    Navigator.of(context)
-                        .pushNamed(ChooseRepairStationPage.routeName);
+                    Navigator.of(context).pushReplacementNamed(
+                        ChooseRepairStationPage.routeName);
                   }
                 : null,
             child: const Text(
