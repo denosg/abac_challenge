@@ -27,69 +27,67 @@ class FinishPage extends ConsumerWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Center(
-          child: Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(left: deviceSize.width * 0.1),
-                  margin: const EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Vă mulțumim\npentru\ncumpărături !',
-                        style: TextStyle(
-                            color: colors.secondary,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25),
-                      ),
-                      const SizedBox(width: 10),
-                      Image.asset(
-                        'img/smiley_face.png',
-                        height: 80,
-                      )
-                    ],
-                  ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: deviceSize.width * 0.1),
+                margin: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Text(
+                      'Vă mulțumim\npentru\ncumpărături !',
+                      style: TextStyle(
+                          color: colors.secondary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25),
+                    ),
+                    const SizedBox(width: 10),
+                    Image.asset(
+                      'img/smiley_face.png',
+                      height: 80,
+                    )
+                  ],
                 ),
-                const SizedBox(width: 20),
-                Text(
-                  'Ați cumpărat: ',
-                  style: TextStyle(
-                      color: colors.secondary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+              ),
+              const SizedBox(width: 20),
+              Text(
+                'Ați cumpărat: ',
+                style: TextStyle(
+                    color: colors.secondary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 250,
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Text(
+                      "- ${cartList[index].produs.name}",
+                      style: TextStyle(color: colors.secondary, fontSize: 18),
+                    );
+                  },
+                  itemCount: ref.read(cartProvider).length,
                 ),
-                const SizedBox(height: 10),
-                SizedBox(
-                  height: 300,
-                  child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return Text(
-                        "- ${cartList[index].produs.name}",
-                        style: TextStyle(color: colors.secondary, fontSize: 18),
-                      );
-                    },
-                    itemCount: ref.read(cartProvider).length,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  'Pentru data de: ${formatter.format(date!)}',
-                  style: TextStyle(
-                      color: colors.secondary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  'De la stația de reparare:\n${repairStation!.title}',
-                  style: TextStyle(
-                      color: colors.secondary,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'Pentru data de: ${formatter.format(date!)}',
+                style: TextStyle(
+                    color: colors.secondary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'De la stația de reparare:\n${repairStation!.title}',
+                style: TextStyle(
+                    color: colors.secondary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+            ],
           ),
         ),
       ),
