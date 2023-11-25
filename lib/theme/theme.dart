@@ -11,6 +11,7 @@ class AppTheme {
       secondary: Colors.black,
       tertiary: createMaterialColor(const Color.fromRGBO(167, 35, 58, 1)),
     ),
+    useMaterial3: false,
     textTheme: GoogleFonts.montserratTextTheme(),
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
